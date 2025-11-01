@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toko Online Makanan & Minuman</title>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+    <!-- Navigasi -->
+    <nav>
+        <div class="wrapper">
+            <div class="logo"><a href="#">FoodDrink</a></div>
+            <div class="menu">
+                <ul>
+                    <li><a href="#">Beranda</a></li>
+                    <li><a href="#produk">Produk</a></li>
+                    <li><a href="#">Tentang</a></li>
+                    <li><a href="#">Kontak</a></li>
+                    <section id="kontak">
+  <h2>Hubungi Kami</h2>
+  <p>Email: @ainafooddrink.com</p>
+  <p>Telepon: 0812-3456-7890</p>
+  <p>Alamat: Jl. Mawar No.10, Pamekasan
+  </p>
+</section>
+
+                    <li><a href="#" id="cart-icon">🛒 <span id="cart-count">0</span></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Selamat Datang di FoodDrink by Aina 🍔🍹</h1>
+            <p>Pesan makanan & minuman favoritmu dengan mudah dan cepat tampa ribet!</p>
+            <a href="#produk" class="btn">Lihat Produk</a>
+        </div>
+    </section>
+
+    <!-- Produk -->
+    <section class="produk" id="produk">
+        <h2>🍴  Menu Daftar Produk Kami 🍹</h2>
+
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="Cari produk..." onkeyup="searchProduct()" />
+        </div>
+
+        <div class="product-container" id="product-container">
+
+            <!-- Makanan -->
+            <div class="product-card" data-name="Burger Keju Spesial">
+                <img src="image.jpg/burger.jpg.jpeg" alt="Burger Keju Spesial">
+                <h3>Burger Keju Spesial</h3>
+                <p>Rp 27.000</p>
+                <button onclick="addToCart('Burger Keju Spesial', 27000)">Tambah ke Keranjang</button>
+            </div>
+
+            <div class="product-card" data-name="soto ayam">
+                <img src="image.jpg/soto.jpg.jpeg" alt="soto ayam">
+                <h3>soto ayam</h3>
+                <p>Rp 21.000</p>
+                <button onclick="addToCart('soto ayam', 21000)">Tambah ke Keranjang</button>
+            </div>
+
+            <div class="product-card" data-name="ceker pedas">
+                <img src="image.jpg/ceker.jpg.jpeg" alt="ceker pedas">
+                <h3>ceker pedas</h3>
+                <p>Rp 24.000</p>
+                <button onclick="addToCart('ceker pedas', 24000)">Tambah ke Keranjang</button>
+            </div>
+
+
+            <div class="product-card" data-name="soto rawon">
+                <img src="image.jpg/soto.jpg (2).jpeg" alt="soto rawon">
+                <h3>soro rawon</h3>
+                <p>Rp 20.000</p>
+                <button onclick="addToCart('soto rawon', 20000)">Tambah ke Keranjang</button>
+            </div>
+
+
+            <div class="product-card" data-name="Pizza Mozarella">
+                <img src="image.jpg/pizza.jpg.jpeg" alt="Pizza Mozarella">
+                <h3>Pizza Mozarella</h3>
+                <p>Rp 35.000</p>
+                <button onclick="addToCart('Pizza Mozarella', 35000)">Tambah ke Keranjang</button>
+            </div>
+
+            <div class="product-card" data-name="Ayam Geprek Sambal Bawang">
+                <img src="image.jpg/geprek.jpg - Salin.jpeg" alt="Ayam Geprek Sambal Bawang">
+                <h3>Ayam Geprek Sambal Bawang</h3>
+                <p>Rp 20.000</p>
+                <button onclick="addToCart('Ayam Geprek Sambal Bawang', 20000)">Tambah ke Keranjang</button>
+            </div>
+
+            <div class="product-card" data-name="Nasi Goreng Seafood">
+                <img src="image.jpg/nasi.jpg.jpeg" alt="Nasi Goreng Seafood">
+                <h3>Nasi Goreng Seafood</h3>
+                <p>Rp 25.000</p>
+                <button onclick="addToCart('Nasi Goreng Seafood', 25000)">Tambah ke Keranjang</button>
+            </div>
+
+            <div class="product-card" data-name="Mie Goreng Jawa">
+                <img src="image.jpg/mie.jpg.jpeg" alt="Mie Goreng Jawa">
+                <h3>Mie Goreng Jawa</h3>
+                <p>Rp 15.000</p>
+                <button onclick="addToCart('Mie Goreng Jawa', 15000)">Tambah ke Keranjang</button>
+            </div>
+
+            <div class="product-card" data-name="Sate Ayam Madura">
+                <img src="image.jpg/sate.jpg.jpeg" alt="Sate Ayam Madura">
+                <h3>Sate Ayam Madura</h3>
+                <p>Rp 15.000</p>
+                <button onclick="addToCart('Sate Ayam Madura', 15000)">Tambah ke Keranjang</button>
+            </div>
+
+            <div class="product-card" data-name="Bakso Urat Jumbo">
+                <img src="image.jpg/bakso.jpg.jpeg" alt="Bakso Urat Jumbo">
+                <h3>Bakso Urat Jumbo</h3>
+                <p>Rp 25.000</p>
+                <button onclick="addToCart('Bakso Urat Jumbo', 25000)">Tambah ke Keranjang</button>
+            </div>
+
+            <div class="product-card" data-name="Rendang Padang Asli">
+                <img src="image.jpg/rendang.jpg.jpeg" alt="Rendang Padang Asli">
+                <h3>Rendang Padang Asli</h3>
+                <p>Rp 38.000</p>
+                <button onclick="addToCart('Rendang Padang Asli', 38000)">Tambah ke Keranjang</button>
+            </div>
+
+            <!-- Minuman -->
+            <div class="product-card" data-name="Es Teh Manis Segar">
+                <img src="c:\Users\DELL 7280\Videos\teh.jpg.jpeg" alt="Es Teh Manis Segar">
+                <h3>Es Teh Manis Segar</h3>
+                <p>Rp 5.000</p>
+                <button onclick="addToCart('Es Teh Manis Segar', 5000)">Tambah ke Keranjang</button>
+            </div>
+
+            <div class="product-card" data-name="Kopi Latte Panas">
+                <img src="image.jpg/kopi,jpg.jpeg" alt="Kopi Latte Panas">
+                <h3>Kopi Latte Panas</h3>
+                <p>Rp 15.000</p>
+                <button onclick="addToCart('Kopi Latte Panas',15000)">Tambah ke Keranjang</button>
+            </div>
+
+            <div class="product-card" data-name="Jus Jeruk Segar">
+                <img src="image.jpg/jeruk.jpg.jpeg" alt="Jus Jeruk Segar">
+                <h3>Jus Jeruk Segar</h3>
+                <p>Rp 10.000</p>
+                <button onclick="addToCart('Jus Jeruk Segar', 10000)">Tambah ke Keranjang</button>
+            </div>
+
+            <div class="product-card" data-name="Smoothie Strawberry">
+                <img src="image.jpg/smoothie.jpg.jpeg" alt="Smoothie Strawberry">
+                <h3>Smoothie Strawberry</h3>
+                <p>Rp 18.000</p>
+                <button onclick="addToCart('Smoothie Strawberry', 18000)">Tambah ke Keranjang</button>
+            </div>
+
+            <div class="product-card" data-name="Milkshake Cokelat">
+                <img src="image.jpg/milk.jpg.jpeg" alt="Milkshake Cokelat">
+                <h3>Milkshake Cokelat</h3>
+                <p>Rp 17.000</p>
+                <button onclick="addToCart('Milkshake Cokelat', 17000)">Tambah ke Keranjang</button>
+            </div>
+
+            <div class="product-card" data-name="Es Kopi Susu Gula Aren">
+                <img src="image.jpg/aren.jpg.jpeg" alt="Es Kopi Susu Gula Aren">
+                <h3>Es Kopi Susu Gula Aren</h3>
+                <p>Rp 20.000</p>
+                <button onclick="addToCart('Es Kopi Susu Gula Aren', 20000)">Tambah ke Keranjang</button>
+            </div>
+
+            <div class="product-card" data-name="Es Campur Segar">
+                <img src="image.jpg/es.jpg - Salin.jpeg" alt="Es Campur Segar">
+                <h3>Es Campur Segar</h3>
+                <p>Rp 12.000</p>
+                <button onclick="addToCart('Es Campur Segar', 12000)">Tambah ke Keranjang</button>
+            </div>
+
+            <div class="product-card" data-name="Es jasuke">
+                <img src="image.jpg/jasuke.jpg.jpeg" alt="Es jasuke">
+                <h3>Es  jasuke</h3>
+                <p>Rp 6.000</p>
+                <button onclick="addToCart('Es jasuke', 6000)">Tambah ke Keranjang</button>
+            </div>
+
+            <div class="product-card" data-name="jus alpukat">
+                <img src="image.jpg/alpukat.jpg - Salin.jpeg" alt="jus alpukat">
+                <h3>jus alpukat</h3>
+                <p>Rp 8.000</p>
+                <button onclick="addToCart('jus alpukat', 8000)">Tambah ke Keranjang</button>
+            </div>
+
+            <div class="product-card" data-name="Es cincau">
+                <img src="image.jpg/cincau.jpg.jpeg" alt="Es cincau">
+                <h3>Es cincau</h3>
+                <p>Rp 6.000</p>
+                <button onclick="addToCart('Es cincau', 6000)">Tambah ke Keranjang</button>
+            </div>
+
+            <!-- Cemilan -->
+             <div class="product-card" data-name="Donat manis">
+                <img src="image.jpg/donat.jpg.jpeg" alt="Donat manis">
+                <h3>Donat manis</h3>
+                <p>Rp 10.000</p>
+                <button onclick="addToCart('Donat manis', 10000)">Tambah ke Keranjang</button>
+            </div>
+
+            <div class="product-card" data-name="Mochi jumbo">
+                <img src="image.jpg/cici.jpg.jpeg" alt="Mochi">
+                <h3>Mochi jumbo</h3>
+                <p>Rp 30.000</p>
+                <button onclick="addToCart('mochi jumbo', 30000)">Tambah ke Keranjang</button>
+            </div>
+
+            <div class="product-card" data-name="Telur gulung">
+                <img src="image.jpg/gulung.jpg.jpeg" alt="Telur gulung">
+                <h3>Telur gulung</h3>
+                <p>Rp 10.000</p>
+                <button onclick="addToCart('Telur gulung', 10000)">Tambah ke Keranjang</button>
+            </div>
+
+
+        </div>
+    </section>
+
+    <!-- Keranjang -->
+    <div class="cart" id="cart">
+        <h3>🛍️ Keranjang Belanja</h3>
+        <ul id="cart-items"></ul>
+        <p><strong>Total: Rp <span id="cart-total">0</span></strong></p>
+        <button id="checkout-btn">Checkout</button>
+        <button id="close-cart">Tutup</button>
+    </div>
+
+    <!-- Pesan sukses -->
+    <div class="checkout-message" id="checkout-message">
+        <div class="message-box">
+            <h3>✅ Pesanan Berhasil!</h3>
+            <p>Terima kasih sudah memesan di <strong>FoodDrink by Aina </strong>. Pesananmu sedang diproses!</p>
+            <button onclick="closeMessage()">Tutup</button>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
