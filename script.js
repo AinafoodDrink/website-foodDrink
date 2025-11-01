@@ -20,6 +20,7 @@ function addToCart(name, price) {
 
 // Ubah jumlah produk (+/-)
 function changeQty(index, amount) {
+    if (!cart[index]) return; // 🟢 tambahan agar tidak error kalau index tidak ada
     cart[index].qty += amount;
     if (cart[index].qty <= 0) {
         cart.splice(index, 1);
@@ -33,6 +34,8 @@ function updateCart() {
     const cartItems = document.getElementById('cart-items');
     const cartCount = document.getElementById('cart-count');
     const cartTotal = document.getElementById('cart-total');
+
+    if (!cartItems || !cartCount || !cartTotal) return; // 🟢 tambah pengecekan elemen agar tidak error
 
     cartItems.innerHTML = '';
     let total = 0;
@@ -62,52 +65,57 @@ function updateCart() {
 
 // Hapus produk
 function removeItem(index) {
+    if (!cart[index]) return; // 🟢 tambahan agar aman
     cart.splice(index, 1);
     saveCart();
     updateCart();
 }
 
 // Tampilkan / sembunyikan keranjang
-document.getElementById('cart-icon').addEventListener('click', () => {
+document.getElementById('cart-icon')?.addEventListener('click', () => {
     const cartBox = document.getElementById('cart');
+    if (!cartBox) return; // 🟢 tambah pengecekan
     cartVisible = !cartVisible;
     cartBox.style.display = cartVisible ? 'block' : 'none';
 });
 
-document.getElementById('close-cart').addEventListener('click', () => {
-    document.getElementById('cart').style.display = 'none';
+document.getElementById('close-cart')?.addEventListener('click', () => {
+    const cartBox = document.getElementById('cart');
+    if (!cartBox) return;
+    cartBox.style.display = 'none';
     cartVisible = false;
 });
 
 // Checkout
-document.getElementById('checkout-btn').addEventListener('click', () => {
+document.getElementById('checkout-btn')?.addEventListener('click', () => {
     if (cart.length === 0) {
         alert('Keranjang masih kosong!');
         return;
     }
-    document.getElementById('checkout-message').style.display = 'flex';
+    const message = document.getElementById('checkout-message');
+    if (message) message.style.display = 'flex';
+
     cart = [];
     saveCart();
     updateCart();
-    document.getElementById('cart').style.display = 'none';
+
+    const cartBox = document.getElementById('cart');
+    if (cartBox) cartBox.style.display = 'none';
 });
 
 function closeMessage() {
-    document.getElementById('checkout-message').style.display = 'none';
+    const message = document.getElementById('checkout-message');
+    if (message) message.style.display = 'none';
 }
 
 // 🔍 Fungsi pencarian produk
 function searchProduct() {
-    const input = document.getElementById('searchInput').value.toLowerCase();
+    const input = document.getElementById('searchInput')?.value.toLowerCase() || '';
     const products = document.querySelectorAll('.product-card');
 
     products.forEach(product => {
-        const name = product.getAttribute('data-name').toLowerCase();
-        if (name.includes(input)) {
-            product.style.display = 'block';
-        } else {
-            product.style.display = 'none';
-        }
+        const name = product.getAttribute('data-name')?.toLowerCase() || '';
+        product.style.display = name.includes(input) ? 'block' : 'none';
     });
 }
 
